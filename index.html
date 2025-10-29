@@ -63,7 +63,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label id="echsCardNoLabel">ECHS Card No/Service No</label>
+                    <label id="echsCardNoLabel">ECHS Card No</label>
                     <input type="text" id="echsCardNo" placeholder="Card Number">
                 </div>
                 <div class="form-group">
@@ -85,7 +85,7 @@
                     <input type="text" id="relatedCardNo" placeholder="Card Number">
                 </div>
                 <div class="form-group">
-                    <label>ECHS Polyclinic</label>
+                    <label id="echsPolyclinicLabel">ECHS Polyclinic</label>
                     <input type="text" id="echsPolyclinic" placeholder="Polyclinic City">
                     <!-- <select id="echsPolyclinic">
                         <option value="">Select Polyclinic</option>
@@ -219,6 +219,25 @@
                         <option value="Bilateral">Bilateral</option>
                     </select>
                 </div>
+                <div class="form-group">
+                    <label>Type of Hearing Loss - Right Ear</label>
+                    <select id="hearingLossTypeRight">
+                        <option value="">Select Type</option>
+                        <option value="Sensorineural Hearing Loss">Sensorineural Hearing Loss</option>
+                        <option value="Conductive Hearing Loss">Conductive Hearing Loss</option>
+                        <option value="Mixed Hearing Loss">Mixed Hearing Loss</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Type of Hearing Loss - Left Ear</label>
+                    <select id="hearingLossTypeLeft">
+                        <option value="">Select Type</option>
+                        <option value="Sensorineural Hearing Loss">Sensorineural Hearing Loss</option>
+                        <option value="Conductive Hearing Loss">Conductive Hearing Loss</option>
+                        <option value="Mixed Hearing Loss">Mixed Hearing Loss</option>
+                    </select>
+                </div>
+
                 <div class="navigation-buttons">
                     <button type="button" class="btn-nav btn-back" data-target="1">&larr; Back</button>
                     <button type="button" class="btn-nav btn-next" data-target="3">Next &rarr;</button>
@@ -348,7 +367,7 @@
                 </div>
 
                 <!-- PART 1: Patient Information -->
-                <div class="report-section">
+                <div class="report-section" id="part1-preview">
                     <div class="section-title">PART 1 - PATIENT INFORMATION</div>
                     <table class="info-table">
                         <tr>
@@ -358,7 +377,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="label">ECHS Card No/Service No</td>
+                            <td class="label" id="preview-echsCardNoLabel">ECHS Card No/Service No</td>
                             <td class="value" id="preview-echsCardNo"><span class="placeholder">ECHS Card No/Service No</span></td>
                             <td class="label">Relation</td>
                             <td class="value" id="preview-relation"><span class="placeholder">Relation</span></td>
@@ -368,14 +387,13 @@
                             <td class="value" colspan="3" id="preview-age"><span class="placeholder">Age</span> Yrs / <span id="preview-sex">Sex</span></td>
                         </tr>
                         <tr id="related-person-row">
-                            <td class="label">Name</td>
-                            <td class="value" colspan="3" id="preview-related-person-details">
-                                <span id="preview-relatedName"><span class="placeholder">Related Person Name</span></span>
-                                <span id="preview-relatedCardNoLabel">ECHS Card No/Service No</span> - <span id="preview-relatedCardNo"><span class="placeholder">Related Card No</span></span>
-                            </td>
+                            <td class="label">Related Person Name</td>
+                            <td class="value" id="preview-relatedName"></td>
+                            <td class="label" id="preview-relatedCardNoLabel"></td>
+                            <td class="value" id="preview-relatedCardNo"></td>
                         </tr>
                         <tr>
-                            <td class="label">ECHS Polyclinic/Unit</td>
+                            <td class="label" id="preview-echsPolyclinicLabel">ECHS Polyclinic/Unit</td>
                             <td class="value" id="preview-echsPolyclinic"><span class="placeholder">Polyclinic</span></td>
                             <td class="label">Contact No</td>
                             <td class="value" id="preview-contactNo"><span class="placeholder">Contact No</span></td>
@@ -413,8 +431,8 @@
                         <tr>
                             <td class="label">Type of Hearing Loss</td>
                             <td class="value" colspan="3">
-                                <div>(R) ear - <span id="preview-diagnosisRight"><span class="placeholder">Diagnosis Right</span></span></div>
-                                <div>(L) ear - <span id="preview-diagnosisLeft"><span class="placeholder">Diagnosis Left</span></span></div>
+                                <div>(R) ear - <span id="preview-diagnosisRight"></span></div>
+                                <div>(L) ear - <span id="preview-diagnosisLeft"></span></div>
                             </td>
                         </tr>
                         <tr>
@@ -431,7 +449,7 @@
                     </table>
                     <!-- Audiogram Chart -->
                     <div class="audiogram-container">
-                        <canvas id="audiogramCanvas" width="450" height="250"></canvas>
+                        <canvas id="audiogramCanvas" width="380" height="210"></canvas>
                     </div>
                 </div>
 

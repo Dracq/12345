@@ -413,7 +413,7 @@ body {
 
 .audiogram-container {
     text-align: center;
-    margin-top: 15px;
+    margin-top: 5px;
 }
 
 /* Consent Section */
@@ -483,15 +483,63 @@ body {
     .report-container {
         box-shadow: none;
         margin: 0;
-        padding: 15mm;
+        padding: 5mm 10mm; /* Reduced from 15mm */
     }
     
     .report-section {
         page-break-inside: avoid;
+        margin-bottom: 8px; /* Reduced from 15px */
+        padding: 8px; /* Reduced from 15px */
+    }
+
+    /* Further reduce spacing specifically for Part 1 to help it fit */
+    #part1-preview {
+        margin-bottom: 5px;
+        padding: 5px;
     }
 
     .page-break-before {
         page-break-before: always;
+    }
+
+    /* Compact header */
+    .report-header {
+        margin-bottom: 10px; /* Reduced from 20px */
+        padding-bottom: 8px; /* Reduced from 15px */
+    }
+    .report-header h1 {
+        font-size: 20px; /* Slightly smaller */
+    }
+    .report-header h2 {
+        font-size: 16px; /* Slightly smaller */
+    }
+
+    /* Compact section titles */
+    .section-title {
+        font-size: 13px; /* Slightly smaller */
+        margin-bottom: 8px; /* Reduced from 12px */
+    }
+
+    /* Compact table cells */
+    .info-table {
+        margin-bottom: 5px; /* Reduced from 10px */
+    }
+    .info-table td {
+        padding: 5px; /* Reduced from 8px */
+        font-size: 11px; /* Slightly smaller */
+    }
+
+    /* Further compact specific elements in Part 2 */
+    .report-section .info-table tr:nth-child(3) td { /* Targeting "Patient's Complaint" header */
+        padding: 5px;
+    }
+    .report-section .info-table tr:nth-child(4) td,
+    .report-section .info-table tr:nth-child(5) td,
+    .report-section .info-table tr:nth-child(6) td { /* Targeting complaint items */
+        padding: 3px 5px;
+    }
+    .info-table div { /* Reduce space between AC/BC lines */
+        margin-bottom: 2px;
     }
 }
 
